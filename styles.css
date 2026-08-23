@@ -117,3 +117,20 @@ h1, h2, h3 {
 @media (max-width: 900px) {
   .about-inner { grid-template-columns: 1fr; }
 }
+
+/* Programs */
+.programs { padding: 100px 0; background: #fafafa; }
+.programs h2 { font-size: 2.5rem; margin-bottom: 48px; }
+.eyebrow.center, h2.center { text-align: center; }
+.program-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.program-card { border-radius: 20px; padding: 28px; }
+.card-sand { background: var(--card-sand); }
+.card-blend { background: var(--card-blend); }
+.card-teal { background: var(--card-teal); }
+.program-image { aspect-ratio: 16 / 10; border-radius: 14px; background: rgba(0, 0, 0, 0.08); margin-bottom: 20px; }
+.program-card h3 { font-size: 1.5rem; margin-bottom: 8px; }
+.link-arrow { display: inline-block; margin-top: 14px; font-weight: 600; }
+
+@media (max-width: 900px) {
+  .program-grid { grid-template-columns: 1fr; }
+}
