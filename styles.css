@@ -96,3 +96,13 @@ h1, h2, h3 {
   }
   .site-nav.open { display: flex; }
 }
+
+/* Impact stats */
+.impact { padding: 60px 0; background: #000; color: #fff; }
+.impact-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: center; }
+.stat-number, .stat-plus { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); }
+.impact-grid p { margin-top: 6px; color: #ccc; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.08em; }
+
+@media (max-width: 900px) {
+  .impact-grid { grid-template-columns: repeat(2, 1fr); }
+}
