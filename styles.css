@@ -287,3 +287,35 @@ body.has-splash { overflow: hidden; height: 100vh; }
   .reveal { opacity: 1; transform: none; transition: none; }
   .splash { transition: none; }
 }
+
+/* Story video block */
+.story { padding: 100px 0; background: var(--color-cream); }
+.story-inner { position: relative; border-radius: 24px; overflow: hidden; }
+.story-video { width: 100%; display: block; aspect-ratio: 16 / 9; object-fit: cover; background: var(--color-ink); }
+.story-card {
+  position: absolute;
+  left: 24px;
+  bottom: 24px;
+  background: var(--color-cream);
+  border: 2px solid var(--color-ink);
+  border-radius: 20px;
+  padding: 16px 20px;
+  max-width: 260px;
+}
+.story-card-icon { font-size: 1.5rem; }
+.story-card-title { font-family: var(--font-display); font-weight: 700; margin: 6px 0 10px; }
+.story-controls { display: flex; gap: 8px; }
+.story-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid var(--color-ink);
+  background: var(--color-white);
+  color: var(--color-ink);
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 900px) {
+  .story-card { left: 12px; bottom: 12px; max-width: 200px; padding: 12px 14px; }
+}

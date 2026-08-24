@@ -102,4 +102,30 @@
       trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
   });
+
+  var storyVideo = document.getElementById('story-video');
+  var storyRestart = document.getElementById('story-restart');
+  var storyPlayPause = document.getElementById('story-playpause');
+  var storyMute = document.getElementById('story-mute');
+  if (storyVideo && storyPlayPause && storyRestart && storyMute) {
+    storyVideo.play();
+    storyPlayPause.addEventListener('click', function () {
+      if (storyVideo.paused) {
+        storyVideo.play();
+        storyPlayPause.textContent = '⏸';
+      } else {
+        storyVideo.pause();
+        storyPlayPause.textContent = '▶';
+      }
+    });
+    storyRestart.addEventListener('click', function () {
+      storyVideo.currentTime = 0;
+      storyVideo.play();
+      storyPlayPause.textContent = '⏸';
+    });
+    storyMute.addEventListener('click', function () {
+      storyVideo.muted = !storyVideo.muted;
+      storyMute.textContent = storyVideo.muted ? '🔇' : '🔊';
+    });
+  }
 })();
