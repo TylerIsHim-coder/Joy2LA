@@ -250,14 +250,22 @@ h1, h2, h3 {
   .program-grid { grid-template-columns: 1fr; }
 }
 
-/* Get Involved */
-.get-involved { padding: 100px 0; }
-.involved-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
-.involved-card { padding: 40px; border-radius: 20px; background: #000; color: #fff; }
-.involved-card h3 { font-size: 2rem; }
-.involved-card .btn-outline { border-color: #fff; color: #fff; }
-.involved-card-donate { background: var(--gradient-brand); color: #000; }
-.involved-card-donate .btn-primary { background: var(--color-black); color: var(--color-white); }
+/* Get Involved (three-way) */
+.get-involved { padding: 100px 0; background: var(--color-cream); }
+.involved-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.involved-card {
+  padding: 40px;
+  border-radius: 20px;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.involved-card h3 { font-size: 1.6rem; }
+.involved-card p { margin-bottom: 20px; }
+.card-mint { background: var(--color-mint); }
+.card-sky { background: var(--color-sky); }
+.involved-photo { background: rgba(58, 43, 31, 0.12); }
 
 @media (max-width: 900px) {
   .involved-grid { grid-template-columns: 1fr; }
