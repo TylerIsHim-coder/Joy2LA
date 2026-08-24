@@ -3,11 +3,13 @@
 
   var splash = document.getElementById('splash');
   var splashVideo = document.getElementById('splash-video');
+  var heroVideo = document.getElementById('hero-video');
 
   function hideSplash() {
     if (!splash) return;
     document.body.classList.remove('has-splash');
     splash.classList.add('is-hidden');
+    if (heroVideo) heroVideo.play();
     setTimeout(function () {
       if (splash && splash.parentNode) {
         splash.parentNode.removeChild(splash);
@@ -16,6 +18,7 @@
   }
 
   if (splash && splashVideo) {
+    splashVideo.playbackRate = 1.5;
     splashVideo.addEventListener('ended', hideSplash);
     splashVideo.addEventListener('error', hideSplash);
     setTimeout(hideSplash, 8000);
