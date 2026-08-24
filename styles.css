@@ -134,3 +134,16 @@ h1, h2, h3 {
 @media (max-width: 900px) {
   .program-grid { grid-template-columns: 1fr; }
 }
+
+/* Get Involved */
+.get-involved { padding: 100px 0; }
+.involved-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.involved-card { padding: 40px; border-radius: 20px; background: #000; color: #fff; }
+.involved-card h3 { font-size: 2rem; }
+.involved-card .btn-outline { border-color: #fff; color: #fff; }
+.involved-card-donate { background: var(--gradient-brand); color: #000; }
+.involved-card-donate .btn-outline { border-color: #000; color: #000; }
+
+@media (max-width: 900px) {
+  .involved-grid { grid-template-columns: 1fr; }
+}
