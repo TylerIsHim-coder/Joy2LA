@@ -93,4 +93,13 @@
     });
   }, { threshold: 0.4 });
   stats.forEach(function (el) { countObserver.observe(el); });
+
+  var accordionTriggers = document.querySelectorAll('.accordion-trigger');
+  accordionTriggers.forEach(function (trigger) {
+    trigger.addEventListener('click', function () {
+      var item = trigger.closest('.accordion-item');
+      var isOpen = item.classList.toggle('open');
+      trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  });
 })();
