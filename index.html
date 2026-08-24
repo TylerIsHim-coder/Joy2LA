@@ -77,42 +77,42 @@
           </div>
           <div class="accordion">
             <div class="accordion-item">
-              <button class="accordion-trigger" aria-expanded="false">
+              <button class="accordion-trigger" aria-expanded="false" aria-controls="accordion-panel-1">
                 <span>hands-on volunteer days</span><span class="accordion-icon">+</span>
               </button>
-              <div class="accordion-panel">
+              <div class="accordion-panel" id="accordion-panel-1" hidden>
                 <p>Real people showing up together for real, hands-on service across LA.</p>
               </div>
             </div>
             <div class="accordion-item">
-              <button class="accordion-trigger" aria-expanded="false">
+              <button class="accordion-trigger" aria-expanded="false" aria-controls="accordion-panel-2">
                 <span>direct family support</span><span class="accordion-icon">+</span>
               </button>
-              <div class="accordion-panel">
+              <div class="accordion-panel" id="accordion-panel-2" hidden>
                 <p>Groceries, essentials, and resources delivered directly to families who need them.</p>
               </div>
             </div>
             <div class="accordion-item">
-              <button class="accordion-trigger" aria-expanded="false">
+              <button class="accordion-trigger" aria-expanded="false" aria-controls="accordion-panel-3">
                 <span>youth mentorship &amp; education</span><span class="accordion-icon">+</span>
               </button>
-              <div class="accordion-panel">
+              <div class="accordion-panel" id="accordion-panel-3" hidden>
                 <p>Books, mentorship, and school-day support that keeps LA kids on track.</p>
               </div>
             </div>
             <div class="accordion-item">
-              <button class="accordion-trigger" aria-expanded="false">
+              <button class="accordion-trigger" aria-expanded="false" aria-controls="accordion-panel-4">
                 <span>100% community-funded</span><span class="accordion-icon">+</span>
               </button>
-              <div class="accordion-panel">
+              <div class="accordion-panel" id="accordion-panel-4" hidden>
                 <p>Every dollar comes from people like you, and goes right back into LA communities.</p>
               </div>
             </div>
           </div>
           <div class="impact-mini-stats">
-            <div class="stat mini-stat" data-target="1200"><span data-count>0</span>+<p>families supported</p></div>
-            <div class="stat mini-stat" data-target="15000"><span data-count>0</span>+<p>meals shared</p></div>
-            <div class="stat mini-stat" data-target="8"><span data-count>0</span><p>community partners</p></div>
+            <div class="stat mini-stat" data-target="1200"><span><span data-count>0</span>+</span><p>families supported</p></div>
+            <div class="stat mini-stat" data-target="15000"><span><span data-count>0</span>+</span><p>meals shared</p></div>
+            <div class="stat mini-stat" data-target="8"><span><span data-count>0</span></span><p>community partners</p></div>
           </div>
         </div>
         <div class="impact-image" aria-hidden="true"></div>
@@ -208,7 +208,7 @@
   <footer class="site-footer" id="contact">
     <div class="container">
       <div class="footer-signup reveal">
-        <h3>let's stay in touch!</h3>
+        <h3>joy in your inbox</h3>
         <form class="signup-form" onsubmit="return false;">
           <input type="email" placeholder="email" aria-label="Email address" required>
           <button type="submit" class="btn">sign up</button>

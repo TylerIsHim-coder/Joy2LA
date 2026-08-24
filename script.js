@@ -98,8 +98,10 @@
   accordionTriggers.forEach(function (trigger) {
     trigger.addEventListener('click', function () {
       var item = trigger.closest('.accordion-item');
+      var panel = item.querySelector('.accordion-panel');
       var isOpen = item.classList.toggle('open');
       trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      if (panel) panel.hidden = !isOpen;
     });
   });
 
@@ -113,9 +115,11 @@
       if (storyVideo.paused) {
         storyVideo.play();
         storyPlayPause.textContent = '⏸';
+        storyPlayPause.setAttribute('aria-label', 'Pause video');
       } else {
         storyVideo.pause();
         storyPlayPause.textContent = '▶';
+        storyPlayPause.setAttribute('aria-label', 'Play video');
       }
     });
     storyRestart.addEventListener('click', function () {
