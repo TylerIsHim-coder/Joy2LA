@@ -30,6 +30,7 @@ h1, h2, h3 {
   margin: 0 0 0.5em;
 }
 .container { max-width: var(--container-width); margin: 0 auto; padding: 0 24px; }
+[id] { scroll-margin-top: 80px; }
 
 /* Buttons */
 .btn {
@@ -38,7 +39,7 @@ h1, h2, h3 {
   border-radius: 999px;
   font-weight: 600;
   font-size: 0.95rem;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transition: transform 0.15s ease;
 }
 .btn:hover { transform: translateY(-2px); }
 .btn-donate, .btn-primary { background: var(--gradient-brand); color: #000; }
@@ -67,6 +68,7 @@ h1, h2, h3 {
 /* Hero */
 .hero {
   padding: 120px 0 90px;
+  /* rgba equivalents of --color-gold / --color-teal at 25% opacity */
   background: linear-gradient(180deg, rgba(216, 199, 147, 0.25), rgba(152, 217, 213, 0.25));
   text-align: center;
 }
@@ -142,7 +144,7 @@ h1, h2, h3 {
 .involved-card h3 { font-size: 2rem; }
 .involved-card .btn-outline { border-color: #fff; color: #fff; }
 .involved-card-donate { background: var(--gradient-brand); color: #000; }
-.involved-card-donate .btn-outline { border-color: #000; color: #000; }
+.involved-card-donate .btn-primary { background: var(--color-black); color: var(--color-white); }
 
 @media (max-width: 900px) {
   .involved-grid { grid-template-columns: 1fr; }
@@ -155,3 +157,8 @@ h1, h2, h3 {
 .footer-contact p, .footer-social a { margin: 4px 0; color: #ccc; display: block; }
 .footer-social { display: flex; flex-direction: column; }
 .footer-copyright { text-align: center; color: #777; font-size: 0.85rem; margin-top: 20px; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+}

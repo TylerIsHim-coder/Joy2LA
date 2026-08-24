@@ -5,17 +5,19 @@
   var navToggle = document.getElementById('nav-toggle');
   var siteNav = document.getElementById('site-nav');
 
-  navToggle.addEventListener('click', function () {
-    var isOpen = siteNav.classList.toggle('open');
-    navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-  });
-
-  var navLinks = siteNav.querySelectorAll('a');
-  for (var i = 0; i < navLinks.length; i++) {
-    navLinks[i].addEventListener('click', function () {
-      siteNav.classList.remove('open');
-      navToggle.setAttribute('aria-expanded', 'false');
+  if (navToggle && siteNav) {
+    navToggle.addEventListener('click', function () {
+      var isOpen = siteNav.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
+
+    var navLinks = siteNav.querySelectorAll('a');
+    for (var i = 0; i < navLinks.length; i++) {
+      navLinks[i].addEventListener('click', function () {
+        siteNav.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    }
   }
 
   window.addEventListener('scroll', function () {
