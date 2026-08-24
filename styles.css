@@ -7,8 +7,14 @@
   --card-blend: #E9F0DE;
   --card-teal: #E4F5F3;
   --card-peach: #F5E3D3;
+  --color-cream: #FFF6E0;
+  --color-mustard: #F3B72E;
+  --color-coral: #FF8F6B;
+  --color-mint: #7FDCC0;
+  --color-sky: #7FCDF0;
+  --color-ink: #3A2B1F;
   --gradient-brand: linear-gradient(135deg, var(--color-gold) 0%, var(--color-teal) 100%);
-  --font-display: 'Bebas Neue', sans-serif;
+  --font-display: 'Baloo 2', sans-serif;
   --font-body: 'Poppins', sans-serif;
   --container-width: 1320px;
 }
@@ -18,34 +24,35 @@ html { scroll-behavior: smooth; }
 body {
   margin: 0;
   font-family: var(--font-body);
-  color: var(--color-black);
-  background: var(--color-white);
+  color: var(--color-ink);
+  background: var(--color-cream);
   line-height: 1.6;
 }
 img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
 h1, h2, h3 {
   font-family: var(--font-display);
-  letter-spacing: 0.02em;
-  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.15;
   margin: 0 0 0.5em;
 }
 .container { max-width: var(--container-width); margin: 0 auto; padding: 0 24px; }
 [id] { scroll-margin-top: 80px; }
 
-/* Buttons */
+/* Buttons — one unified pill style used everywhere */
 .btn {
   display: inline-block;
-  padding: 10px 22px;
+  padding: 12px 24px;
   border-radius: 999px;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 0.95rem;
+  background: var(--color-white);
+  color: var(--color-ink);
+  border: 2px solid var(--color-ink);
   transition: transform 0.15s ease;
 }
 .btn:hover { transform: translateY(-2px); }
-.btn-donate, .btn-primary { background: var(--gradient-brand); color: #000; }
-.btn-secondary { background: var(--color-black); color: var(--color-white); }
-.btn-outline { border: 2px solid var(--color-black); color: var(--color-black); }
 
 /* Header / Nav — floating pill, logo + hamburger + donate, links in a dropdown */
 .site-header {
