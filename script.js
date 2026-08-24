@@ -1,6 +1,28 @@
 (function () {
   "use strict";
 
+  var splash = document.getElementById('splash');
+  var splashVideo = document.getElementById('splash-video');
+
+  function hideSplash() {
+    if (!splash) return;
+    document.body.classList.remove('has-splash');
+    splash.classList.add('is-hidden');
+    setTimeout(function () {
+      if (splash && splash.parentNode) {
+        splash.parentNode.removeChild(splash);
+      }
+    }, 700);
+  }
+
+  if (splash && splashVideo) {
+    splashVideo.addEventListener('ended', hideSplash);
+    splashVideo.addEventListener('error', hideSplash);
+    setTimeout(hideSplash, 8000);
+  } else if (splash) {
+    hideSplash();
+  }
+
   var header = document.getElementById('site-header');
   var navToggle = document.getElementById('nav-toggle');
   var siteNav = document.getElementById('site-nav');

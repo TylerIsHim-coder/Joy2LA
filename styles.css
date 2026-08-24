@@ -158,7 +158,24 @@ h1, h2, h3 {
 .footer-social { display: flex; flex-direction: column; }
 .footer-copyright { text-align: center; color: #777; font-size: 0.85rem; margin-top: 20px; }
 
+/* Splash intro */
+body.has-splash { overflow: hidden; height: 100vh; }
+.splash {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: var(--color-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transition: opacity 0.6s ease;
+}
+.splash-video { width: 100%; height: 100%; object-fit: cover; }
+.splash.is-hidden { opacity: 0; pointer-events: none; }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
+  .splash { transition: none; }
 }
