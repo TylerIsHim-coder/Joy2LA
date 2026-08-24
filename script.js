@@ -101,7 +101,15 @@
       var panel = item.querySelector('.accordion-panel');
       var isOpen = item.classList.toggle('open');
       trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      if (panel) panel.hidden = !isOpen;
+      if (!panel) return;
+      if (isOpen) {
+        panel.hidden = false;
+      } else {
+        panel.addEventListener('transitionend', function onEnd() {
+          panel.removeEventListener('transitionend', onEnd);
+          if (!item.classList.contains('open')) panel.hidden = true;
+        });
+      }
     });
   });
 
@@ -126,6 +134,7 @@
       storyVideo.currentTime = 0;
       storyVideo.play();
       storyPlayPause.textContent = '⏸';
+      storyPlayPause.setAttribute('aria-label', 'Pause video');
     });
     storyMute.addEventListener('click', function () {
       storyVideo.muted = !storyVideo.muted;
