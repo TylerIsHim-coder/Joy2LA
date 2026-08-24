@@ -1,3 +1,61 @@
 (function () {
   "use strict";
+
+  var header = document.getElementById('site-header');
+  var navToggle = document.getElementById('nav-toggle');
+  var siteNav = document.getElementById('site-nav');
+
+  navToggle.addEventListener('click', function () {
+    var isOpen = siteNav.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+
+  var navLinks = siteNav.querySelectorAll('a');
+  for (var i = 0; i < navLinks.length; i++) {
+    navLinks[i].addEventListener('click', function () {
+      siteNav.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  }
+
+  window.addEventListener('scroll', function () {
+    header.classList.toggle('scrolled', window.scrollY > 10);
+  });
+
+  var revealEls = document.querySelectorAll('.reveal');
+  var revealObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+  revealEls.forEach(function (el) { revealObserver.observe(el); });
+
+  var stats = document.querySelectorAll('.stat');
+  var countObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      var stat = entry.target;
+      var target = parseInt(stat.getAttribute('data-target'), 10);
+      var numEl = stat.querySelector('[data-count]');
+      var duration = 1200;
+      var startTime = null;
+
+      function step(timestamp) {
+        if (startTime === null) startTime = timestamp;
+        var progress = Math.min((timestamp - startTime) / duration, 1);
+        numEl.textContent = Math.floor(progress * target).toLocaleString();
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        } else {
+          numEl.textContent = target.toLocaleString();
+        }
+      }
+      requestAnimationFrame(step);
+      countObserver.unobserve(stat);
+    });
+  }, { threshold: 0.4 });
+  stats.forEach(function (el) { countObserver.observe(el); });
 })();
