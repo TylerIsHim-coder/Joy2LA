@@ -1,6 +1,14 @@
 (function () {
   "use strict";
 
+  var announcementBar = document.getElementById('announcement-bar');
+  var announcementClose = document.getElementById('announcement-close');
+  if (announcementBar && announcementClose) {
+    announcementClose.addEventListener('click', function () {
+      announcementBar.classList.add('is-hidden');
+    });
+  }
+
   var splash = document.getElementById('splash');
   var splashVideo = document.getElementById('splash-video');
   var heroVideo = document.getElementById('hero-video');
