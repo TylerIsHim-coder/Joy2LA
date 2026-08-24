@@ -148,7 +148,7 @@ h1, h2, h3 {
 .programs { padding: 100px 0; background: #fafafa; }
 .programs h2 { font-size: 2.5rem; margin-bottom: 48px; }
 .eyebrow.center, h2.center { text-align: center; }
-.program-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+.program-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
 .program-card { border-radius: 20px; padding: 28px; }
 .card-sand { background: var(--card-sand); }
 .card-blend { background: var(--card-blend); }
