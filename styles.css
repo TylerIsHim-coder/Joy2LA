@@ -154,7 +154,8 @@ h1, h2, h3 {
 .card-blend { background: var(--card-blend); }
 .card-teal { background: var(--card-teal); }
 .card-peach { background: var(--card-peach); }
-.program-image { aspect-ratio: 4 / 3; border-radius: 14px; background: rgba(0, 0, 0, 0.08); margin-bottom: 20px; }
+.program-image { aspect-ratio: 9 / 16; border-radius: 14px; background: rgba(0, 0, 0, 0.08); margin-bottom: 20px; overflow: hidden; }
+.program-image video, .program-image img { width: 100%; height: 100%; object-fit: cover; border-radius: inherit; }
 .program-card h3 { font-size: 1.5rem; margin-bottom: 8px; }
 .link-arrow { display: inline-block; margin-top: 14px; font-weight: 600; }
 
