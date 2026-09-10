@@ -8,131 +8,62 @@
   <link rel="icon" href="assets/logo.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script>
+    try {
+      if (sessionStorage.getItem('joy2la-splash-seen') === '1') {
+        document.documentElement.classList.add('skip-splash');
+      }
+    } catch (e) {}
+  </script>
   <noscript>
     <style>.reveal { opacity: 1; transform: none; }</style>
   </noscript>
 </head>
 <body class="has-splash">
   <div class="splash" id="splash">
-    <video class="splash-video" id="splash-video" autoplay muted playsinline>
+    <video class="splash-video" id="splash-video" autoplay playsinline>
       <source src="assets/intro.mp4" type="video/mp4">
     </video>
   </div>
 
-  <div class="announcement-bar" id="announcement-bar">
-    <p>🎉 join our next volunteer day — <a href="#get-involved">get involved →</a></p>
-    <button class="announcement-close" id="announcement-close" aria-label="Dismiss announcement">×</button>
-  </div>
-
   <header class="site-header" id="site-header">
-    <div class="container header-inner">
-      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav">
-        <span></span><span></span><span></span>
-      </button>
+    <div class="nav-pill open" id="nav-pill">
       <a href="#top" class="logo-link" aria-label="Joy 2 LA home">
         <img src="assets/logo.png" alt="Joy 2 LA logo" class="logo-img">
       </a>
-      <div class="header-actions">
-        <a href="#get-involved" class="btn">get involved →</a>
-        <a href="#get-involved" class="btn">donate →</a>
+      <div class="site-nav-clip">
+        <nav class="site-nav" id="site-nav" aria-hidden="false">
+          <a href="about.html">About</a>
+          <a href="volunteer.html">Volunteer</a>
+          <a href="events.html">Events</a>
+          <a href="#impact">Impact</a>
+          <a href="get-involved.html">Get Involved</a>
+          <a href="#contact">Contact</a>
+        </nav>
       </div>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Close navigation" aria-expanded="true" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <a href="get-involved.html#donate" class="btn btn-donate">Donate →</a>
     </div>
-    <nav class="site-nav" id="site-nav">
-      <a href="#about">about</a>
-      <a href="#programs">programs</a>
-      <a href="#impact">impact</a>
-      <a href="#get-involved">get involved</a>
-      <a href="#contact">contact</a>
-    </nav>
   </header>
 
   <main id="top">
-    <section class="hero" id="hero">
+    <section class="hero" id="hero" aria-label="Joy2LA community highlight">
       <video class="hero-video" id="hero-video" muted loop playsinline preload="auto">
         <source src="assets/hero.mp4" type="video/mp4">
       </video>
-      <div class="hero-overlay"></div>
-      <div class="container hero-inner">
-        <h1>see a need.<br>bring people together.<br>spread joy.</h1>
-        <p class="hero-sub">joy2la is a los angeles nonprofit bringing people and organizations together to serve, connect, and spread joy throughout our community.</p>
-        <div class="hero-ctas">
-          <a href="#get-involved" class="btn">get involved →</a>
-        </div>
-      </div>
     </section>
 
-    <section class="impact" id="impact">
-      <div class="container impact-feature">
-        <div class="impact-content">
-          <p class="eyebrow">our impact</p>
-          <h2>real impact, real fast.</h2>
-          <div class="impact-badges">
-            <div class="stat stat-badge" data-target="500">
-              <span class="stat-badge-number"><span data-count>0</span>+</span>
-              <span class="stat-badge-label">volunteer hours</span>
-            </div>
-            <span class="sticker">501(c)(3) nonprofit</span>
-          </div>
-          <div class="accordion">
-            <div class="accordion-item">
-              <button class="accordion-trigger" aria-expanded="false" aria-controls="accordion-panel-1">
-                <span>hands-on volunteer days</span><span class="accordion-icon">+</span>
-              </button>
-              <div class="accordion-panel" id="accordion-panel-1" hidden>
-                <p>Real people showing up together for real, hands-on service across LA.</p>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <button class="accordion-trigger" aria-expanded="false" aria-controls="accordion-panel-2">
-                <span>direct family support</span><span class="accordion-icon">+</span>
-              </button>
-              <div class="accordion-panel" id="accordion-panel-2" hidden>
-                <p>Groceries, essentials, and resources delivered directly to families who need them.</p>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <button class="accordion-trigger" aria-expanded="false" aria-controls="accordion-panel-3">
-                <span>youth mentorship &amp; education</span><span class="accordion-icon">+</span>
-              </button>
-              <div class="accordion-panel" id="accordion-panel-3" hidden>
-                <p>Books, mentorship, and school-day support that keeps LA kids on track.</p>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <button class="accordion-trigger" aria-expanded="false" aria-controls="accordion-panel-4">
-                <span>100% community-funded</span><span class="accordion-icon">+</span>
-              </button>
-              <div class="accordion-panel" id="accordion-panel-4" hidden>
-                <p>Every dollar comes from people like you, and goes right back into LA communities.</p>
-              </div>
-            </div>
-          </div>
-          <div class="impact-mini-stats">
-            <div class="stat mini-stat" data-target="1200"><span><span data-count>0</span>+</span><p>families supported</p></div>
-            <div class="stat mini-stat" data-target="15000"><span><span data-count>0</span>+</span><p>meals shared</p></div>
-            <div class="stat mini-stat" data-target="8"><span><span data-count>0</span></span><p>community partners</p></div>
-          </div>
-        </div>
-        <div class="impact-image" aria-hidden="true"></div>
-      </div>
-    </section>
-
-    <section class="story">
-      <div class="container story-inner reveal">
-        <video class="story-video" id="story-video" muted loop playsinline preload="metadata">
-          <source src="assets/intro.mp4" type="video/mp4">
-        </video>
-        <div class="story-card">
-          <span class="story-card-icon" aria-hidden="true">📺</span>
-          <p class="story-card-title">joy2la story — episode 1</p>
-          <div class="story-controls">
-            <button class="story-btn" id="story-restart" aria-label="Restart video">⏮</button>
-            <button class="story-btn" id="story-playpause" aria-label="Play or pause video">⏸</button>
-            <button class="story-btn" id="story-mute" aria-label="Mute or unmute video">🔊</button>
-          </div>
-        </div>
+    <section class="impact" id="impact" aria-label="Our motto">
+      <div class="container motto-strip">
+        <h1 class="motto-strip-text">
+          <span>See a need.</span>
+          <span>Bring people together.</span>
+          <span>Spread joy.</span>
+        </h1>
       </div>
     </section>
 
@@ -140,13 +71,10 @@
       <div class="container about-inner reveal">
         <div class="about-image" aria-hidden="true"></div>
         <div class="about-text">
-          <p class="eyebrow">our mission</p>
-          <h2>community starts with showing up.</h2>
+          <p class="eyebrow">Our Mission</p>
+          <h2>Community Starts With Showing Up.</h2>
           <p>Joy2LA brings people together to serve Los Angeles communities through meaningful, hands-on acts of giving. From supporting children and families to serving our unhoused neighbors, we create opportunities for people to show up, give back, and spread joy—together.</p>
-          <a href="#programs" class="btn">see our programs →</a>
-          <svg class="doodle" width="60" height="60" viewBox="0 0 60 60" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20 35 C15 25, 25 15, 30 22 C35 15, 45 25, 40 35 C35 45, 30 48, 30 48 C30 48, 25 45, 20 35 Z"/>
-          </svg>
+          <a href="about.html" class="link-arrow">Read our story →</a>
         </div>
       </div>
     </section>
@@ -154,31 +82,37 @@
     <section class="programs" id="programs">
       <div class="container">
         <p class="eyebrow center">Our Programs</p>
-        <h2 class="center">where we show up</h2>
+        <h2 class="center">Where We Show Up</h2>
         <div class="program-grid">
-          <article class="program-card card-mustard reveal">
-            <div class="program-image" aria-hidden="true"></div>
-            <h3>community outreach</h3>
+          <article class="program-card card-sand has-media-video reveal">
+            <div class="program-image">
+              <video muted loop playsinline autoplay preload="metadata" aria-hidden="true">
+                <source src="assets/community-outreach.mp4" type="video/mp4">
+              </video>
+            </div>
+            <h3>Community Outreach</h3>
             <p>Bringing people together to serve our neighbors through free hair services, food, clothing, hygiene essentials, and other acts of care.</p>
-            <a href="#contact" class="btn">learn more →</a>
+            <a href="#contact" class="link-arrow">Learn more →</a>
           </article>
-          <article class="program-card card-coral reveal">
-            <div class="program-image" aria-hidden="true"></div>
-            <h3>youth &amp; education</h3>
+          <article class="program-card card-blend has-media-video reveal">
+            <div class="program-image">
+              <video muted loop playsinline autoplay preload="metadata" aria-hidden="true">
+                <source src="assets/youth-education.mp4" type="video/mp4">
+              </video>
+            </div>
+            <h3>Youth &amp; Education</h3>
             <p>Encouraging students through books, Career Day experiences, rewards for excellent attendance, and special traditions that bring meals, toys, and joy to the entire school community.</p>
-            <a href="#contact" class="btn">learn more →</a>
+            <a href="#contact" class="link-arrow">Learn more →</a>
           </article>
-          <article class="program-card card-mint reveal">
-            <div class="program-image" aria-hidden="true"></div>
-            <h3>families &amp; care</h3>
-            <p>Creating moments of care for young mothers, families, and individuals—from celebrating milestones to showing up during difficult seasons and reminding people they haven't been forgotten.</p>
-            <a href="#contact" class="btn">learn more →</a>
-          </article>
-          <article class="program-card card-sky reveal">
-            <div class="program-image" aria-hidden="true"></div>
-            <h3>seasonal giving</h3>
+          <article class="program-card card-peach has-media-video reveal">
+            <div class="program-image">
+              <video muted loop playsinline autoplay preload="metadata" aria-hidden="true">
+                <source src="assets/seasonal-giving.mp4" type="video/mp4">
+              </video>
+            </div>
+            <h3>Seasonal Giving</h3>
             <p>Creating community giveback festivals that bring families together with meals, games, toys, activities, and holiday traditions—while creating opportunities for volunteers to spread joy throughout the season.</p>
-            <a href="#contact" class="btn">learn more →</a>
+            <a href="#contact" class="link-arrow">Learn more →</a>
           </article>
         </div>
       </div>
@@ -186,66 +120,41 @@
 
     <section class="get-involved" id="get-involved">
       <div class="container involved-grid">
-        <div class="involved-card card-mint reveal">
-          <h3>want to partner with us?</h3>
-          <p>Schools, businesses, and community groups—let's team up to serve LA together.</p>
-          <a href="#contact" class="btn">partner with us →</a>
+        <div class="involved-card reveal">
+          <h3>Volunteer</h3>
+          <p>Show up for your neighbors. Join a Joy 2 LA volunteer day and help us deliver support where it's needed most.</p>
+          <a href="volunteer.html" class="btn btn-outline">Become a Volunteer →</a>
         </div>
-        <div class="involved-card involved-photo reveal">
-          <h3>follow along</h3>
-          <p>See what we're up to between volunteer days.</p>
-          <a href="#contact" class="btn">follow along →</a>
-        </div>
-        <div class="involved-card card-sky reveal">
-          <h3>ready to show up?</h3>
-          <p>Join a Joy2LA volunteer day and help us deliver support where it's needed most.</p>
-          <a href="#contact" class="btn">become a volunteer →</a>
+        <div class="involved-card involved-card-donate reveal">
+          <h3>Donate</h3>
+          <p>Every dollar goes directly toward families, youth programs, and community wellness across LA.</p>
+          <a href="get-involved.html#donate" class="btn btn-primary">Donate Now →</a>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer" id="contact">
-    <div class="container">
-      <div class="footer-signup reveal">
-        <h3>joy in your inbox</h3>
-        <form class="signup-form" onsubmit="return false;">
-          <input type="email" placeholder="email" aria-label="Email address" required>
-          <button type="submit" class="btn">sign up</button>
-        </form>
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="assets/logo.png" alt="Joy 2 LA logo" class="logo-img">
+        <span class="logo-text">Joy 2 LA</span>
       </div>
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <img src="assets/logo.png" alt="Joy 2 LA logo" class="logo-img">
-          <span class="logo-text">Joy 2 LA</span>
-        </div>
-        <div class="footer-links">
-          <a href="#about">About</a>
-          <a href="#programs">Programs</a>
-          <a href="#impact">Impact</a>
-          <a href="#get-involved">Get Involved</a>
-          <a href="#contact">Contact</a>
-        </div>
-        <div class="footer-contact">
-          <p>hello@joy2la.org</p>
-          <p>(323) 555-0192</p>
-          <p>Los Angeles, CA</p>
-        </div>
-        <div class="footer-social">
-          <a href="#" aria-label="Instagram">Instagram</a>
-          <a href="#" aria-label="Facebook">Facebook</a>
-          <a href="#" aria-label="TikTok">TikTok</a>
-        </div>
+      <div class="footer-contact">
+        <p>hello@joy2la.org</p>
+        <p>(323) 555-0192</p>
+        <p>Los Angeles, CA</p>
       </div>
-      <div class="footer-badges">
-        <span class="sticker">501(c)(3) nonprofit</span>
-        <span class="sticker">los angeles, ca</span>
-        <span class="sticker">volunteer-powered</span>
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram">Instagram</a>
+        <a href="#" aria-label="Facebook">Facebook</a>
+        <a href="#" aria-label="TikTok">TikTok</a>
       </div>
-      <p class="footer-copyright">© 2026 Joy 2 LA. All rights reserved.</p>
     </div>
+    <p class="footer-copyright">© 2026 Joy 2 LA. All rights reserved.</p>
   </footer>
 
   <script src="script.js"></script>
+  <script src="admin-events.js?v=2"></script>
 </body>
 </html>

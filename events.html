@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events | Joy 2 LA</title>
+  <meta name="description" content="Upcoming Joy2LA community events, volunteer days, and giveback opportunities across Los Angeles.">
+  <link rel="icon" href="assets/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <noscript>
+    <style>.reveal { opacity: 1; transform: none; }</style>
+  </noscript>
+</head>
+<body class="page-events">
+  <header class="site-header" id="site-header">
+    <div class="nav-pill open" id="nav-pill">
+      <a href="index.html" class="logo-link" aria-label="Joy 2 LA home">
+        <img src="assets/logo.png" alt="Joy 2 LA logo" class="logo-img">
+      </a>
+      <div class="site-nav-clip">
+        <nav class="site-nav" id="site-nav" aria-hidden="false">
+          <a href="about.html">About</a>
+          <a href="volunteer.html">Volunteer</a>
+          <a href="events.html" aria-current="page">Events</a>
+          <a href="index.html#impact">Impact</a>
+          <a href="get-involved.html">Get Involved</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+      </div>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Close navigation" aria-expanded="true" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <a href="get-involved.html#donate" class="btn btn-donate">Donate →</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="events-page">
+      <div class="events-atmosphere" aria-hidden="true"></div>
+      <div class="container">
+        <header class="events-intro">
+          <p class="eyebrow">Events</p>
+          <h1>What’s Next</h1>
+          <p class="events-lede">Volunteer days, community givebacks, and moments to show up together across Los Angeles.</p>
+        </header>
+
+        <div class="events-layout">
+          <div class="events-calendar-panel">
+            <div class="cal-header">
+              <div class="cal-month-wrap">
+                <h2 class="cal-month" id="cal-month">August 2026</h2>
+                <span class="cal-month-rule" aria-hidden="true"></span>
+              </div>
+              <div class="cal-nav-group">
+                <button type="button" class="cal-today-btn" id="cal-today">Today</button>
+                <button type="button" class="cal-nav" id="cal-prev" aria-label="Previous month">‹</button>
+                <button type="button" class="cal-nav" id="cal-next" aria-label="Next month">›</button>
+              </div>
+            </div>
+            <div class="cal-weekdays" aria-hidden="true">
+              <span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span>
+            </div>
+            <div class="cal-grid" id="cal-grid" role="grid" aria-labelledby="cal-month"></div>
+            <p class="cal-legend cal-legend-desktop">
+              <span class="cal-legend-chip"></span>
+              Events show up as chips inside each day — click a chip for the full title &amp; location.
+            </p>
+            <p class="cal-legend cal-legend-mobile">
+              <span class="cal-legend-chip"></span>
+              Colored marks mean there’s an event — tap a day or an event below for details.
+            </p>
+          </div>
+
+          <div class="events-mobile-list" id="events-mobile-list" aria-live="polite"></div>
+          <div class="events-day-detail" id="events-day-detail" aria-live="polite" hidden></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="event-modal" id="event-modal" hidden>
+    <div class="event-modal-backdrop" data-close-modal></div>
+    <div class="event-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="event-modal-title">
+      <button type="button" class="event-modal-close" id="event-modal-close" aria-label="Close">×</button>
+      <p class="event-modal-date" id="event-modal-date"></p>
+      <h3 class="event-modal-title" id="event-modal-title"></h3>
+      <p class="event-modal-location" id="event-modal-location"></p>
+      <p class="event-modal-time" id="event-modal-time" hidden></p>
+      <a class="btn btn-primary event-modal-link" id="event-modal-link" hidden>Details →</a>
+    </div>
+  </div>
+
+  <footer class="site-footer" id="contact">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="assets/logo.png" alt="Joy 2 LA logo" class="logo-img">
+        <span class="logo-text">Joy 2 LA</span>
+      </div>
+      <div class="footer-contact">
+        <p>hello@joy2la.org</p>
+        <p>(323) 555-0192</p>
+        <p>Los Angeles, CA</p>
+      </div>
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram">Instagram</a>
+        <a href="#" aria-label="Facebook">Facebook</a>
+        <a href="#" aria-label="TikTok">TikTok</a>
+      </div>
+    </div>
+    <p class="footer-copyright">© 2026 Joy 2 LA. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="admin-events.js?v=2"></script>
+  <script src="events.js?v=15"></script>
+</body>
+</html>

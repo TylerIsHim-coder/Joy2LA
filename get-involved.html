@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join the Joy2LA Team | Joy 2 LA</title>
+  <meta name="description" content="Volunteer with Joy2LA — barbers, braiders, photographers, videographers, and helpers serving our Skid Row community.">
+  <link rel="icon" href="assets/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <noscript>
+    <style>.reveal { opacity: 1; transform: none; }</style>
+  </noscript>
+</head>
+<body class="page-get-involved">
+  <header class="site-header" id="site-header">
+    <div class="nav-pill open" id="nav-pill">
+      <a href="index.html" class="logo-link" aria-label="Joy 2 LA home">
+        <img src="assets/logo.png" alt="Joy 2 LA logo" class="logo-img">
+      </a>
+      <div class="site-nav-clip">
+        <nav class="site-nav" id="site-nav" aria-hidden="false">
+          <a href="about.html">About</a>
+          <a href="volunteer.html">Volunteer</a>
+          <a href="events.html">Events</a>
+          <a href="index.html#impact">Impact</a>
+          <a href="get-involved.html" aria-current="page">Get Involved</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Close navigation" aria-expanded="true" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <a href="#donate" class="btn btn-donate">Donate →</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="gi-hero" aria-labelledby="gi-title">
+      <div class="gi-hero-glow" aria-hidden="true"></div>
+      <div class="container gi-hero-inner">
+        <p class="eyebrow">Get Involved</p>
+        <h1 id="gi-title">
+          <span>Join the</span>
+          <span>Joy2LA Team</span>
+        </h1>
+        <p class="gi-hero-copy">Thank you for sharing your time and talent with our Skid Row community. Fill out the form below and our team will reach out with upcoming volunteer opportunities.</p>
+      </div>
+    </section>
+
+    <section class="gi-form-section" id="volunteer" aria-labelledby="gi-form-title">
+      <div class="container">
+        <div class="gi-form-shell">
+          <!--
+            Formspree: create a form at https://formspree.io,
+            email to hello@joy2la.org, then paste the endpoint into get-involved.js
+          -->
+          <form
+            class="gi-form"
+            id="volunteer-form"
+            action="https://formspree.io/f/YOUR_FORM_ID"
+            method="POST"
+            novalidate
+          >
+            <input type="hidden" name="_subject" value="Joy2LA volunteer application">
+            <input type="text" name="_gotcha" class="gi-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+            <div class="gi-block gi-field-full">
+              <h2 id="gi-form-title" class="gi-block-title">Your Information</h2>
+
+              <div class="gi-field gi-field-full">
+                <label for="vol-name">Full Name</label>
+                <input id="vol-name" name="full_name" type="text" required autocomplete="name">
+              </div>
+
+              <div class="gi-field">
+                <label for="vol-phone">Phone Number</label>
+                <input id="vol-phone" name="phone" type="tel" required autocomplete="tel">
+              </div>
+
+              <div class="gi-field">
+                <label for="vol-email">Email Address</label>
+                <input id="vol-email" name="email" type="email" required autocomplete="email">
+              </div>
+
+              <div class="gi-field gi-field-full">
+                <label for="vol-instagram">Instagram Handle <span class="gi-optional">optional</span></label>
+                <input id="vol-instagram" name="instagram" type="text" autocomplete="off" placeholder="@yourhandle">
+              </div>
+            </div>
+
+            <div class="gi-block gi-field-full">
+              <h2 class="gi-block-title">How Would You Like to Serve?</h2>
+
+              <fieldset class="gi-fieldset">
+                <legend>I am a:</legend>
+                <div class="gi-choice-list">
+                  <label class="gi-choice">
+                    <input type="radio" name="role" value="Barber" required>
+                    <span>Barber</span>
+                  </label>
+                  <label class="gi-choice">
+                    <input type="radio" name="role" value="Braider">
+                    <span>Braider</span>
+                  </label>
+                  <label class="gi-choice">
+                    <input type="radio" name="role" value="Both Barber & Braider">
+                    <span>Both Barber &amp; Braider</span>
+                  </label>
+                  <label class="gi-choice">
+                    <input type="radio" name="role" value="Photography">
+                    <span>Photography</span>
+                  </label>
+                  <label class="gi-choice">
+                    <input type="radio" name="role" value="Videography">
+                    <span>Videography</span>
+                  </label>
+                  <label class="gi-choice">
+                    <input type="radio" name="role" value="Just Volunteer">
+                    <span>Just Volunteer</span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <div class="gi-field gi-field-full">
+                <label for="vol-experience">Tell us a little about your experience:</label>
+                <textarea id="vol-experience" name="experience" rows="4" required></textarea>
+              </div>
+            </div>
+
+            <div class="gi-block gi-field-full">
+              <h2 class="gi-block-title">Availability</h2>
+
+              <fieldset class="gi-fieldset">
+                <legend>I’m interested in:</legend>
+                <div class="gi-choice-list">
+                  <label class="gi-choice">
+                    <input type="radio" name="interest" value="Volunteering at an upcoming Skid Row outreach" required>
+                    <span>Volunteering at an upcoming Skid Row outreach</span>
+                  </label>
+                  <label class="gi-choice">
+                    <input type="radio" name="interest" value="Joining the team for future events">
+                    <span>Joining the team for future events</span>
+                  </label>
+                  <label class="gi-choice">
+                    <input type="radio" name="interest" value="Both">
+                    <span>Both</span>
+                  </label>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="gi-block gi-field-full">
+              <h2 class="gi-block-title">Supplies</h2>
+              <p class="gi-note">Diamond Beauty Supply provides the braiding hair, hair products, and supplies needed for our outreach events.</p>
+            </div>
+
+            <div class="gi-consent">
+              <label class="gi-choice gi-choice-check">
+                <input type="checkbox" name="consent" value="Yes" required>
+                <span>I understand that Joy2LA will contact me with event details and volunteer opportunities.</span>
+              </label>
+            </div>
+
+            <div class="gi-form-actions">
+              <button type="submit" class="btn btn-primary gi-submit" id="volunteer-submit">Join the Team →</button>
+            </div>
+            <p class="form-status" id="volunteer-status" role="status" aria-live="polite" hidden></p>
+            <p class="gi-form-closing">Thank you for using your talent to serve our community. We can’t wait to serve alongside you!</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="gi-donate" id="donate" aria-labelledby="gi-donate-title">
+      <div class="container gi-donate-inner">
+        <div class="gi-donate-copy">
+          <p class="eyebrow gi-eyebrow-light">Support the work</p>
+          <h2 id="gi-donate-title">Fuel the next giveback day</h2>
+          <p>Every gift helps fund outreach, youth programs, and care for neighbors across LA.</p>
+        </div>
+        <div class="gi-donate-actions">
+          <a href="mailto:hello@joy2la.org?subject=Joy2LA%20donation" class="btn btn-primary">Email to donate →</a>
+          <a href="events.html" class="btn gi-btn-ghost">See upcoming events →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="assets/logo.png" alt="Joy 2 LA logo" class="logo-img">
+        <span class="logo-text">Joy 2 LA</span>
+      </div>
+      <div class="footer-contact">
+        <p>hello@joy2la.org</p>
+        <p>(323) 555-0192</p>
+        <p>Los Angeles, CA</p>
+      </div>
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram">Instagram</a>
+        <a href="#" aria-label="Facebook">Facebook</a>
+        <a href="#" aria-label="TikTok">TikTok</a>
+      </div>
+    </div>
+    <p class="footer-copyright">© 2026 Joy 2 LA. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="admin-events.js?v=2"></script>
+  <script src="get-involved.js"></script>
+</body>
+</html>
