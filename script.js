@@ -71,6 +71,11 @@
   var compactWidth = 0;
   var animTimer = null;
   var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var mobileNavQuery = window.matchMedia('(max-width: 900px)');
+
+  function isMobileNav() {
+    return mobileNavQuery.matches;
+  }
 
   function getOpenWidth() {
     var styles = window.getComputedStyle(header);
@@ -90,13 +95,17 @@
     }
   }
 
+  function syncBodyNavLock(isOpen) {
+    document.body.classList.toggle('nav-open', !!(isOpen && isMobileNav()));
+  }
+
   function finishAnim() {
     if (animTimer) {
       clearTimeout(animTimer);
       animTimer = null;
     }
     navPill.classList.remove('is-animating');
-    if (!navPill.classList.contains('open')) {
+    if (!navPill.classList.contains('open') || isMobileNav()) {
       navPill.style.width = '';
     }
   }
@@ -109,8 +118,9 @@
     navToggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
     siteNav.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
     setLinkTabIndex(isOpen);
+    syncBodyNavLock(isOpen);
 
-    if (prefersReducedMotion.matches) {
+    if (isMobileNav() || prefersReducedMotion.matches) {
       navPill.classList.toggle('open', isOpen);
       navPill.style.width = '';
       finishAnim();
@@ -137,22 +147,33 @@
   }
 
   if (navToggle && navPill && siteNav) {
-    // Start expanded (matches default HTML state)
-    setLinkTabIndex(true);
-
-    // Measure compact width without a visible flash, for later collapse
     var prevTransition = navPill.style.transition;
     navPill.style.transition = 'none';
-    navPill.classList.remove('open');
-    navPill.style.width = 'max-content';
-    void navPill.offsetWidth;
-    compactWidth = navPill.getBoundingClientRect().width;
-    navPill.classList.add('open');
-    if (!prefersReducedMotion.matches) {
-      navPill.style.width = getOpenWidth() + 'px';
-    } else {
+
+    if (isMobileNav()) {
+      // Compact bar + dropdown on small screens
+      navPill.classList.remove('open');
       navPill.style.width = '';
+      setLinkTabIndex(false);
+      navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.setAttribute('aria-label', 'Open navigation');
+      siteNav.setAttribute('aria-hidden', 'true');
+      syncBodyNavLock(false);
+    } else {
+      // Desktop: start expanded, measure compact width for later collapse
+      setLinkTabIndex(true);
+      navPill.classList.remove('open');
+      navPill.style.width = 'max-content';
+      void navPill.offsetWidth;
+      compactWidth = navPill.getBoundingClientRect().width;
+      navPill.classList.add('open');
+      if (!prefersReducedMotion.matches) {
+        navPill.style.width = getOpenWidth() + 'px';
+      } else {
+        navPill.style.width = '';
+      }
     }
+
     void navPill.offsetWidth;
     navPill.style.transition = prevTransition;
 
@@ -165,6 +186,11 @@
       setNavOpen(!navPill.classList.contains('open'));
     });
 
+    siteNav.addEventListener('click', function (e) {
+      if (!isMobileNav()) return;
+      if (e.target.closest('a')) setNavOpen(false);
+    });
+
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && navPill.classList.contains('open')) {
         setNavOpen(false);
@@ -173,6 +199,12 @@
     });
 
     window.addEventListener('resize', function () {
+      if (isMobileNav()) {
+        navPill.style.width = '';
+        syncBodyNavLock(navPill.classList.contains('open'));
+        return;
+      }
+      document.body.classList.remove('nav-open');
       if (!navPill.classList.contains('open')) return;
       navPill.style.width = getOpenWidth() + 'px';
     });
